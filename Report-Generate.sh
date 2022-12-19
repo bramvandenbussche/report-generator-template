@@ -2,7 +2,7 @@
 cd "$(dirname "$0")"
 
 # Generate latest version of the Plantuml images
-./Report-Uml.sh
+./report-uml.sh
 
 # Concat the markdowns
 rm fullReport.fmd
@@ -11,7 +11,7 @@ cat fullReport.fmd
 
 # Generate the pdf
 pandoc fullReport.fmd \
- -o OSCP-OS-566207-Lab-Report.pdf \
+ -o report.pdf \
  --from markdown+yaml_metadata_block+raw_html \
  --template eisvogel \
  --table-of-contents \
